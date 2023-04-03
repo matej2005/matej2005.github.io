@@ -70,7 +70,7 @@ const icon = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcv
           {
             opcode: 'edit_json_block',
             blockType: Scratch.BlockType.COMMAND,
-            text: 'send json [JSON_DATA] webhook url: [WEBHOOK_URL]',
+            text: 'edit json [JSON_DATA] webhook url: [WEBHOOK_URL]',
             arguments: {
               JSON_DATA: {
                 type: Scratch.ArgumentType.STRING,
