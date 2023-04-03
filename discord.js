@@ -33,6 +33,25 @@ const icon = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcv
             }
           },
           {
+            opcode: 'edit_message_block',
+            blockType: Scratch.BlockType.COMMAND,
+            text: 'edit message [MESSAGE] as [USERNAME] webhook url: [WEBHOOK_URL]',
+            arguments: {
+              MESSAGE: {
+                type: Scratch.ArgumentType.STRING,
+                defaultValue: 'Text send from TurboWarp!'
+              },
+              USERNAME:{
+                type: Scratch.ArgumentType.STRING,
+                defaultValue: 'TurboWarp Bot'
+              },
+              WEBHOOK_URL: {
+                type: Scratch.ArgumentType.STRING,
+                defaultValue: 'https://discord.com/api/webhooks/'
+              }
+            }
+          },
+          {
             opcode: 'send_json_block',
             blockType: Scratch.BlockType.COMMAND,
             text: 'send json [JSON_DATA] webhook url: [WEBHOOK_URL]',
@@ -52,6 +71,24 @@ const icon = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcv
 
     }
     send_message_block({MESSAGE,USERNAME,WEBHOOK_URL}){
+        var json_data = {
+            username: USERNAME,
+            avatar_url: "",
+            content: MESSAGE
+        }
+      try {return fetch(WEBHOOK_URL, {
+            method: "PATCH",
+            headers: {
+              'Content-type': 'application/json'
+            },
+            body: JSON.stringify(json_data)
+          }).then(res => {
+            console.log(res);
+          })
+      }
+    catch(err) {}
+    }
+        edit_message_block({MESSAGE,USERNAME,WEBHOOK_URL}){
         var json_data = {
             username: USERNAME,
             avatar_url: "",
