@@ -66,6 +66,22 @@ const icon = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcv
               }
              }
             }
+          ,
+          {
+            opcode: 'edit_json_block',
+            blockType: Scratch.BlockType.COMMAND,
+            text: 'send json [JSON_DATA] webhook url: [WEBHOOK_URL]',
+            arguments: {
+              JSON_DATA: {
+                type: Scratch.ArgumentType.STRING,
+                defaultValue: '{"content": "Text send from TurboWarp!","embeds": null,"attachments": []}'
+              },
+              WEBHOOK_URL: {
+                type: Scratch.ArgumentType.STRING,
+                defaultValue: 'https://discord.com/api/webhooks/'
+              }
+             }
+            }
         ]
       }
 
@@ -109,6 +125,19 @@ const icon = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcv
     send_json_block({JSON_DATA,WEBHOOK_URL}){
       try {return fetch(WEBHOOK_URL, {
             method: "POST",
+            headers: {
+              'Content-type': 'application/json'
+            },
+            body: (JSON_DATA)
+          }).then(res => {
+            console.log(res);
+          })
+      }
+    catch(err) {}
+    }
+    edit_json_block({JSON_DATA,WEBHOOK_URL}){
+      try {return fetch(WEBHOOK_URL, {
+            method: "PATCH",
             headers: {
               'Content-type': 'application/json'
             },
