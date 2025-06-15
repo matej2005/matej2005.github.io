@@ -1,0 +1,15 @@
+{
+  "visual": "rled.png",
+  "width": 322,
+  "height": 97,
+  "pinBlocks": [
+    {
+      "type": "digital",
+      "pins": ["P10"]
+    },
+    {
+      "type": "power",
+      "pins": ["5V", "GND"]
+    }
+  ]
+}
