@@ -1,5 +1,5 @@
 
-> Otevřít tuto stránku v aplikaci [https://aotahal.github.io/pxt-robotrix/](https://aotahal.github.io/pxt-robotrix/)
+> Otevřít tuto stránku v aplikaci [https://matej2005.github.io/pxt-robotrix](https://matej2005.github.io/pxt-robotrix)
 
 ## Použít jako rozšíření
 
@@ -16,7 +16,7 @@ Slouží k úpravě tohoto úložiště v aplikaci MakeCode.
 
 * otevřít [https://makecode.microbit.org/](https://makecode.microbit.org/)
 * klikněte na možnost **Import** a poté na **Import adresy URL**
-* vložte **https://github.com/aotahal/pxt-robotrix** a klikněte na možnost import
+* vložte **https://matej2005.github.io/pxt-robotrix** a klikněte na možnost import
 
 #### Metadata (slouží k vyhledávání, vykreslování)
 
